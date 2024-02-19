@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState ,useCallback } from 'react'
 import { yesImg } from './Images';
 import { useId } from 'react';
 export default function Card() {
@@ -14,7 +14,7 @@ export default function Card() {
   
    const[img,setImg] = useState("askingCat.gif") ;
    
-  const yesBtn =()=>{
+  const yesBtn =useCallback(()=>{
     setNoCount(0);
     setNbtnText("Say No 💔");
     setYesCount(yesCount+1);
@@ -38,7 +38,8 @@ export default function Card() {
         
     }
     
-}
+},[yesCount,ybtnText,img,setImg,setMessage,setYbtnText,setNbtnText,noCount])
+
  const resetBtnHandler =()=>{
     setImg(yesImg.yes[0])
     setMessage("")
@@ -47,7 +48,7 @@ export default function Card() {
     setReset(false);
  }
 
-  const noBtn =()=>{
+  const noBtn = useCallback(()=>{
     setYesCount(0);
     setYbtnText("Say Yes 💖") ;
     setNoCount(noCount+1);
@@ -64,7 +65,7 @@ export default function Card() {
        
     }
   
-}
+},[yesCount,ybtnText,img,setImg,setMessage,setYbtnText,setNbtnText,noCount])  
 
 
   
