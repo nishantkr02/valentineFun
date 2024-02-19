@@ -38,7 +38,7 @@ export default function Card() {
         
     }
     
-},[yesCount,ybtnText,img,setImg,setMessage,setYbtnText,setNbtnText,noCount])
+},[yesCount,ybtnText,setYesCount,setNoCount,img,setImg,setMessage,setYbtnText,setNbtnText,noCount])
 
  const resetBtnHandler =()=>{
     setImg(yesImg.yes[0])
@@ -65,7 +65,7 @@ export default function Card() {
        
     }
   
-},[yesCount,ybtnText,img,setImg,setMessage,setYbtnText,setNbtnText,noCount])  
+},[yesCount,setYesCount,setNoCount,ybtnText,img,setImg,setMessage,setYbtnText,setNbtnText,noCount,])  
 
 
   
