@@ -16,6 +16,7 @@ export default function Card() {
    
   const yesBtn =()=>{
     setNoCount(0);
+    setNbtnText("Say No 💔");
     setYesCount(yesCount+1);
     
     /* if(yesCount==1){
@@ -48,6 +49,7 @@ export default function Card() {
 
   const noBtn =()=>{
     setYesCount(0);
+    setYbtnText("Say Yes 💖") ;
     setNoCount(noCount+1);
     if(noCount>=yesImg.no.length-1){
         setNbtnText("💔");
@@ -67,26 +69,31 @@ export default function Card() {
 
   
 return (
-<div className=" w-full bg-white text-black border border-gray-500 rounded-2xl shadow-xl bg-gray-500 border-red-700 items-center ">
+<div className=" mt-4 width  bg-white text-black border-4  rounded-3xl shadow-2xl border-pink-500 items-center  "
 
-<img className=" mx-auto  py-8"  src={`/src/images/${img}` }/>
+>
 
-<div className="px-8 pb-8">
+<img className=" mx-auto   py-8"  style={{width:"60%" ,height:"90%"}} src={`./images/${img}` }/>
 
-        <h2 className="text-3xl font-semibold tracking-tight text-gray-900 text-black">
+<div className=" px-8 pb-8 mt-1 w-6/12 sm:w-full ">
+    <div className=' mx-4 text-center '>
+    <h2 className="text-2xl  sm:text-2xl font-semibold tracking-tight text-red-900  ">
             {message}
         </h2>
-    
-    <div className="flex items-center justify-between">
-   
-        <button className="text-white bg-green-400 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-2xl px-5 py-4 my-4  text-center" onClick={yesBtn}>{ybtnText}</button>
+
+    </div>
         
-            {reset && <button className="text-white bg-blue-400 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-2xl px-5 py-4 my-4 text-center" onClick={resetBtnHandler}>
+    
+    <div className="flex items-center justify-between ">
+   
+        <button className="text-white bg-green-400 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-3xl text-2xl px-5  py-2 my-4  text-center shadow-2xl" onClick={yesBtn}>{ybtnText}</button>
+        
+            {reset && <button className="text-white bg-blue-400 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-2xl px-5 mx-4 py-2 my-4 text-center shadow-2xl" onClick={resetBtnHandler}>
                 Reset 
             </button>  }
 
         <button
-            className="text-white bg-red-400 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-2xl px-5 py-4 my-4 text-center " onClick={noBtn}
+            className="text-white bg-red-400 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-3xl text-2xl px-5 mx-4  py-2 my-4 text-center shadow-2xl " onClick={noBtn}
         >
             {nbtnText}
         </button>
